@@ -32,14 +32,13 @@
 
     <div *ngIf="!productosServices.cargando" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
 
-        <a *ngFor="let producto of productosServices.productos" routerLink="/item" class="rk-item ae-masonry__item">
+        <a *ngFor="let producto of productosServices.productos" [routerLink]="['/item', producto.cod]" class="rk-item ae-masonry__item">
             <img src="assets/productos/{{ producto.url }}.jpg" alt="">
             <div class="item-meta">
                 <h2>{{ producto.titulo }}</h2>
                 <p>{{ producto.categoria }}</p>
             </div>
         </a>
-
-
     </div>
+
 </section>
